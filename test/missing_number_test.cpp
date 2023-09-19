@@ -16,9 +16,9 @@ mt19937 rng(rd());
 
 void generateSequence(vector<int>& sequence, int size, int missingNumber)
 {
-    iota(sequence.begin(), sequence.begin() + size, 1);
+    iota(sequence.begin(), sequence.end(), 1);
     sequence.erase(sequence.begin() + missingNumber - 1);
-    shuffle(sequence.begin(), sequence.begin() + size - 1, rng);
+    shuffle(sequence.begin(), sequence.end(), rng);
 }
 
 TEST_CASE("The missing number can be found by sorting")
